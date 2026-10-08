@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urna Eletrônica</title>
+
+    <style>
+        body {
+            background-color: #ddd;
+            font-family: Arial, sans-serif;
+        }
+
+        .urna {
+            max-width: 500px;
+            margin: 30px auto;
+            padding: 25px;
+            background-color: #eee;
+            border: 2px solid black;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .tela {
+            background-color: #ccc;
+            border: 3px solid black;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+
+        .candidato {
+            display: block;
+            background-color: white;
+            border: 2px solid black;
+            padding: 12px;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        .numero {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .botoes {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .botao {
+            display: inline-block;
+            padding: 12px;
+            margin: 4px;
+            border: 1px solid black;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .branco {
+            background-color: white;
+        }
+
+        .corrige {
+            background-color: orange;
+        }
+
+        .confirma {
+            background-color: green;
+            color: white;
+        }
+
+        .mensagem {
+            display: none;
+            padding: 12px;
+            background-color: white;
+            border: 2px solid green;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            cursor: pointer;
+        }
+
+        /* Mensagem de confirmação do presidente */
+        #confirma-presidente:checked ~ .resultado-presidente {
+            display: block;
+        }
+
+        /* Mensagem de confirmação do governador */
+        #confirma-governador:checked ~ .resultado-governador {
+            display: block;
+        }
+
+        @media (max-width: 600px) {
+            .urna {
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="urna">
+
+    <h1>URNA ELETRÔNICA</h1>
+
+    <!-- PRESIDENTE -->
+    <form>
+        <div class="tela">
+            <h2>Presidente</h2>
+
+            <label class="candidato">
+                <input type="radio" name="presidente" value="10">
+                <span class="numero">10</span> - Marin Kitagawa
+            </label>
+
+            <label class="candidato">
+                <input type="radio" name="presidente" value="11">
+                <span class="numero">11</span> - Gojo Wakana
+            </label>
+
+            <label class="candidato">
+                <input type="radio" name="presidente" value="12">
+                <span class="numero">12</span> - Sajuna Inui
+            </label>
+
+            <p>Selecione seu candidato:</p>
+
+            <input type="checkbox" id="confirma-presidente">
+            <label for="confirma-presidente" class="botao confirma">
+                CONFIRMA
+            </label>
+
+            <div class="mensagem resultado-presidente">
+                Você confirmou seu voto para Presidente!
+            </div>
+        </div>
+
+        <div class="botoes">
+            <button type="reset" class="botao corrige">
+                CORRIGE
+            </button>
+        </div>
+    </form>
+
+    <!-- GOVERNADOR -->
+    <form>
+        <div class="tela">
+            <h2>Governador</h2>
+
+            <label class="candidato">
+                <input type="radio" name="governador" value="20">
+                <span class="numero">20</span> - Sebastian Michaelis
+            </label>
+
+            <label class="candidato">
+                <input type="radio" name="governador" value="21">
+                <span class="numero">21</span> - Ciel Phantomhive
+            </label>
+
+            <label class="candidato">
+                <input type="radio" name="governador" value="22">
+                <span class="numero">22</span> - Grell Sutcliff
+            </label>
+
+            <p>Selecione seu candidato:</p>
+
+            <input type="checkbox" id="confirma-governador">
+            <label for="confirma-governador" class="botao confirma">
+                CONFIRMA
+            </label>
+
+            <div class="mensagem resultado-governador">
+                Você confirmou seu voto para Governador!
+            </div>
+        </div>
+
+        <div class="botoes">
+            <button type="reset" class="botao corrige">
+                CORRIGE
+            </button>
+        </div>
+    </form>
+
+</div>
+
+</body>
+</html>
